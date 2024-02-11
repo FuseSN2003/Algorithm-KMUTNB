@@ -50,7 +50,6 @@ void generateBinary(int *arr, int *binary, vector<int> &result, int n, int k, in
           }
         }
       }
-      return;
     } else {
       return;
     }

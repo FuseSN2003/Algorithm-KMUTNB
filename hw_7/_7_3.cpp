@@ -4,11 +4,13 @@ using namespace std;
 
 void permutation(int n, int k, vector<int> &permute, vector<bool> &checked, int *count) {
   if(permute.size() == k) {
-    *count+=1;
-    for(int num: permute) {
-      cout << num << " ";
+    if(permute[0] < permute[1]) {
+      *count+=1;
+      for(int num: permute) {
+        cout << num << " ";
+      }
+      cout << endl;
     }
-    cout << endl;
   } else {
     for(int i = 1; i <= n; i++) {
       if(checked[i]) continue;
