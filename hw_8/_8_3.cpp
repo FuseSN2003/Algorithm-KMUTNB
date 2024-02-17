@@ -28,10 +28,13 @@ void nQueen(int *arr, int n, int k) {
 }
 
 int main() {
-  int arr[4], n;
+  int n;
   n = 4;
+  int *arr = new int[n];
   // cin >> n;
   nQueen(arr, n, 0);
+
+  delete[] arr;
   
   return 0;
 }
