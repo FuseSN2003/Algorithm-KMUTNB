@@ -49,12 +49,8 @@ int main() {
   n = 4;
   // cin >> n;
 
-  TwinGift *gift[n];
+  TwinGift **gift = new TwinGift*[n]{new TwinGift(3, 5), new TwinGift(7, 11), new TwinGift(8, 8), new TwinGift(8, 9)};
   int *binary = new int[n]{0};
-  gift[0] = new TwinGift(3, 5);
-  gift[1] = new TwinGift(7, 11);
-  gift[2] = new TwinGift(8, 8);
-  gift[3] = new TwinGift(8, 9);
 
   // for(int i = 0; i < n; i++) {
   //     int gift1, gift2;
@@ -66,6 +62,7 @@ int main() {
   cout << leastDiff << endl;
 
   delete[] binary;
+  delete[] gift;
   
   return 0;
 }
