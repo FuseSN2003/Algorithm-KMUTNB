@@ -2,12 +2,14 @@
 
 using namespace std;
 
+bool compareDiff(pair<int, int> a, pair<int, int> b) {
+  int diff_a = abs(a.first - a.second);
+  int diff_b = abs(b.first - b.second);
+  return diff_a > diff_b;
+}
+
 void findLines(vector<pair<int,int>> lines, int n, int start, int end) {
-  sort(lines.begin(), lines.end(), [](pair<int, int> a, pair<int, int> b) {
-    int diff_a = abs(a.first - a.second);
-    int diff_b = abs(b.first - b.second);
-    return diff_a > diff_b;
-  });
+  sort(lines.begin(), lines.end(), compareDiff);
 
   vector<pair<int, int>> result;
 
